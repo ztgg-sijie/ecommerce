@@ -9,12 +9,15 @@ public interface UserService {
 	 * getUserById
 	 * 
 	 * @param userId
-	 * @return
+	 * @return User 
 	 */
 	User getUserById(Long userId);
 
 	/**
+	 * getUserList
 	 * 
+	 * @param userId
+	 * @return User  
 	 */
 	UserExecution getUserList(User userCondition, int pageIndex, int pageSize);
 

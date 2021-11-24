@@ -232,10 +232,10 @@ public class ShopController {
 	@ResponseBody
 	private Map<String, Object> getShopList(HttpServletRequest request) {
 		Map<String, Object> modelMap = new HashMap<String, Object>();
-		// TODO: remve these 3 line when login/session code is complete
+		// TODO: remove these 3 line when login/session code is complete
 		User owner = new User();
 		owner.setUserId(1238L);
-//		request.getSession().setAttribute("user", owner);
+		request.getSession().setAttribute("user", owner);
 		//get owner from session
 //		owner = (User) request.getSession().getAttribute("user");
 		try {

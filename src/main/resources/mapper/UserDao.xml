@@ -70,6 +70,7 @@
 		(#{name},#{gender},#{email},#{profileImg},
 		#{userType},#{timeCreated},#{timeUpdated},#{enableStatus})
 	</insert>
+	
 	<update id="updateUser" parameterType="com.ztgg.ecommerce.entity.User">
 		update tb_user
 		<set>

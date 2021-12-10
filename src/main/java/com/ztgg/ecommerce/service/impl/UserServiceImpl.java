@@ -41,6 +41,7 @@ public class UserServiceImpl implements UserService {
 	
 	@Override
 	@Transactional
+	//transactional 事务 - roll-back
 	public UserExecution modifyUser(User user) {
 		if (user == null || user.getUserId() == null) {
 			return new UserExecution(UserStateEnum.EMPTY);

@@ -234,7 +234,7 @@ public class ShopController {
 		Map<String, Object> modelMap = new HashMap<String, Object>();
 		// TODO: remove these 3 line when login/session code is complete
 		User owner = new User();
-		owner.setUserId(1238L);
+		owner.setUserId(1L);
 		request.getSession().setAttribute("user", owner);
 		//get owner from session
 //		owner = (User) request.getSession().getAttribute("user");
@@ -263,7 +263,7 @@ public class ShopController {
 			Object currentShopObj = request.getSession().getAttribute("currentShop");
 			if (currentShopObj == null) {
 				modelMap.put("redirect", true);
-				modelMap.put("url", "/online-store/shopadmin/shoplist");
+				modelMap.put("url", "/ecommerce/shopadmin/shoplist");
 			} else {
 				Shop currentShop = (Shop) currentShopObj;
 				modelMap.put("redirect", false);

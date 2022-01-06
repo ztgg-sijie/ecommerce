@@ -8,7 +8,7 @@ $(function() {
 	
 	var shopId = getQueryString('shopId')
 	var isEdit = shopId ? true : false;
-	var shopInfoUrl = "/ecommerce/shopadmin/getshopbyid?shopId=" + shopId;
+	var shopInfoUrl = '/ecommerce/shopadmin/getshopbyid?shopId=' + shopId;
 	var editShopUrl = '/ecommerce/shopadmin/modifyshop'
 	
 	if (!isEdit) {

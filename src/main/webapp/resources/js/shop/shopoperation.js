@@ -3,12 +3,12 @@
  * 2. call controller and register a shop when submitted
  */
 $(function() {
-	var initUrl = '/ecommerce/shopadmin/getshopinitinfo';
-	var registerShopUrl = '/ecommerce/shopadmin/registershop';
+	var initUrl = '/ecommerce/shopadmin/getshopinitinfo'
+	var registerShopUrl = '/ecommerce/shopadmin/registershop'
 	
 	var shopId = getQueryString('shopId')
 	var isEdit = shopId ? true : false;
-	var shopInfoUrl = "/ecommerce/shopadmin/getshopbyid?shopId=" + shopId;
+	var shopInfoUrl = '/ecommerce/shopadmin/getshopbyid?shopId=' + shopId
 	var editShopUrl = '/ecommerce/shopadmin/modifyshop'
 	
 	if (!isEdit) {

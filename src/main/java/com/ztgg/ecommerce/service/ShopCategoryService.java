@@ -7,6 +7,14 @@ import com.ztgg.ecommerce.entity.ShopCategory;
 
 
 public interface ShopCategoryService {
+	
+	/**
+	 * insert a new shop category
+	 * 
+	 * @param shopCategory
+	 * @return
+	 */
+	int addShopCategory(ShopCategory shopCategory);
 
 	/**
 	 * 

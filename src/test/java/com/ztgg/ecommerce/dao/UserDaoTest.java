@@ -32,7 +32,7 @@ public class UserDaoTest extends BaseTest {
 
 	@Test
 	public void testBQueryUserById() {
-		long userId = 1242;
+		long userId = 2;
 		User person = personInfoDao.queryUserById(userId);
 		System.out.println(person.getName());
 	}

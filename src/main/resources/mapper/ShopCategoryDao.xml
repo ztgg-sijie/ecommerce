@@ -3,6 +3,51 @@
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ztgg.ecommerce.dao.ShopCategoryDao">
+
+	<!-- private Long shopCategoryId;
+	private String shopCategoryName;
+	private String shopCategoryDesc;
+	private String shopCategoryImg;
+	private Integer priority;
+	private Date timeCreated;
+	private Date timeUpdated;
+	private ShopCategory parent; -->
+
+	<resultMap type="com.ztgg.ecommerce.entity.ShopCategory" id="shopCategoryMap">
+		<id column="shop_category_id" property="shopCategoryId" />
+		<result column="shop_category_name" property="shopCategoryName" />
+		<result column="shop_category_desc" property="shopCategoryDesc" />
+		<result column="shop_category_img" property="shopCategoryImg" />
+		<result column="priority" property="priority" />
+		<result column="time_created" property="timeCreated" />
+		<result column="time_updated" property="timeUpdated" />
+		
+		<!-- <result column="parent_id" property="parent" /> -->
+		
+		<association property="parent" column="parent_id"
+			javaType="com.ztgg.ecommerce.entity.ShopCategory">
+			<id column="shop_category_id" property="shopCategoryId" />
+			<result column="shop_category_name" property="shopCategoryName" />
+		</association>
+		
+	</resultMap>
+	
+	<insert id="insertShopCategory" useGeneratedKeys="true" keyColumn="shop_category_id"
+		keyProperty="shopCategoryId">
+		INSERT INTO
+		tb_shop_category(
+		shop_category_name,
+		shop_category_desc,
+		shop_category_img,
+		priority,
+		time_created,
+		time_updated,
+		parent_id)
+		VALUES
+		(#{shopCategoryName},#{shopCategoryDesc},#{shopCategoryImg},
+		#{priority},#{timeCreated},#{timeUpdated},#{parent})
+	</insert>
+
 	<select id="queryShopCategory" resultType="com.ztgg.ecommerce.entity.ShopCategory">
 		SELECT
 		shop_category_id,

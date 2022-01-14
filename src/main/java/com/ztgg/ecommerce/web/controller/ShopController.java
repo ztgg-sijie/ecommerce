@@ -46,7 +46,6 @@ public class ShopController {
 	@Autowired
 	private AreaService areaService;
 	
-	
 	@RequestMapping(value = "/getshopinitinfo", method = RequestMethod.GET)
 	@ResponseBody
 	private Map<String, Object> getShopInitInfo() {
@@ -64,6 +63,48 @@ public class ShopController {
 			modelMap.put("errMsg", e.getMessage());
 		}
 		return modelMap;
+	}
+	
+	@RequestMapping(value = "/addshopcategory", method = RequestMethod.POST)
+	@ResponseBody
+	private Map<String, Object> addShopCategory(HttpServletRequest request) {
+		Map<String, Object> modelMap = new HashMap<String, Object>();
+		
+		// 1.get and transform all input data
+
+		String shopCategoryStr = HttpServletRequestUtil.getString(request, "shopCategoryStr");
+		ObjectMapper mapper = new ObjectMapper();
+		ShopCategory shopCategory = null;
+		try {
+			shopCategory = mapper.readValue(shopCategoryStr, ShopCategory.class);
+		} catch (Exception e) {
+			modelMap.put("success", false);
+			modelMap.put("errMsg", e.getMessage());
+			return modelMap;
+		}
+		
+		// for image
+//		CommonsMultipartFile shopCategoryImg = null;
+//		CommonsMultipartResolver commonsMultipartResolver = new CommonsMultipartResolver(
+//				request.getSession().getServletContext());
+//		if (commonsMultipartResolver.isMultipart(request)) {
+//			MultipartHttpServletRequest multipartHttpServletRequest = (MultipartHttpServletRequest) request;
+//			shopCategoryImg = (CommonsMultipartFile) multipartHttpServletRequest.getFile("shopCategoryImg");
+//		} else {
+//			modelMap.put("success", false);
+//			modelMap.put("errMsg", "can't upload empty image");
+//			return modelMap;
+//		}
+		
+		// 2.register shop category
+		if (shopCategory != null) {
+			modelMap.put("success", true);
+			return modelMap;
+		} else {
+			modelMap.put("success", false);
+			modelMap.put("errMsg", "can't insert empty shop");
+			return modelMap;
+		}
 	}
 	
 	@RequestMapping(value = "/registershop", method = RequestMethod.POST)

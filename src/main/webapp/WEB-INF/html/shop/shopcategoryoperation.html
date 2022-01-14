@@ -3,9 +3,8 @@
 <html>
 <head>
 <meta charset="utf-8">
-<!-- <meta charset="gdk"> -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>SUI Mobile Demo</title>
+<title>Add Shop Category</title>
 <meta name="description"
 	content="MSUI: Build mobile apps with simple HTML, CSS, and JS components.">
 <meta name="author" content="阿里巴巴国际UED前端">
@@ -30,29 +29,19 @@
 		<div id="page-label-input" class="page">
 			<header class="bar bar-nav">
 				<a class="button button-link button-nav pull-left back"
-					href="/demos/form"> <span class="icon icon-left"></span> 返回
+					href="/demos/form"> <span class="icon icon-left"></span> BACK
 				</a>
-				<h1 class="title">创建商店</h1>
+				<h1 class="title">Add Shop Category</h1>
 			</header>
 			<div class="content">
+				<!-- attributes -->
 				<div class="list-block">
 					<ul>
-						<!-- 商铺名称 text -->
-						<li>
-							<div class="item-content">
-								<div class="item-inner">
-									<div class="item-title label">商铺名称</div>
-									<div class="item-input">
-										<input type="text" id="shop-name" placeholder="商铺名称">
-									</div>
-								</div>
-							</div>
-						</li>
 						<!-- 商铺分类 drop-down select -->
 						<li>
 							<div class="item-content">
 								<div class="item-inner">
-									<div class="item-title label">商铺分类</div>
+									<div class="item-title label">Existing Shop Category</div>
 									<div class="item-input">
 										<select id="shop-category">
 										
@@ -64,71 +53,48 @@
 								</div>
 							</div>
 						</li>
-						<!-- 区域分类 drop-down select -->
+						<!-- 商铺名称 text -->
 						<li>
 							<div class="item-content">
 								<div class="item-inner">
-									<div class="item-title label">所属区域</div>
+									<div class="item-title label">Category Name</div>
 									<div class="item-input">
-										<select id="area">
-										</select>
+										<input type="text" id="shop-category-name" placeholder="Name">
 									</div>
 								</div>
 							</div>
 						</li>
-						<!-- 详细地址 text -->
-						<li>
-							<div class="item-content">
-								<div class="item-inner">
-									<div class="item-title label">详细地址</div>
-									<div class="item-input">
-										<input type="text" id="shop-addr" placeholder="详细地址">
-									</div>
-								</div>
-							</div>
-						</li>
-						<!-- 电话 text -->
-						<li>
-							<div class="item-content">
-								<div class="item-inner">
-									<div class="item-title label">电话</div>
-									<div class="item-input">
-										<input type="text" id="shop-phone" placeholder="电话">
-									</div>
-								</div>
-							</div>
-						</li>
-						<!-- 店铺图片 file-upload -->
-						<li>
-							<div class="item-content">
-								<div class="item-inner">
-									<div class="item-title label">店铺图片</div>
-									<div class="item-input">
-										<input type="file" id="shop-img">
-									</div>
-								</div>
-							</div>
-						</li>
-						<!-- 店铺简介 textarea -->
+						<!-- 店铺简介 text -->
 						<li class="align-top">
 							<div class="item-content">
 								<div class="item-inner">
-									<div class="item-title label">店铺简介</div>
+									<div class="item-title label">Category Description</div>
 									<div class="item-input">
-										<textarea id="shop-desc" placeholder="店铺简介"></textarea>
+										<textarea id="shop-category-desc" placeholder="Description"></textarea>
 									</div>
 								</div>
 							</div>
 						</li>
-						<!-- 验证码 captcha -->
+						
+						<!-- priority text -->
 						<li>
 							<div class="item-content">
 								<div class="item-inner">
-									<div class="item-title label">验证码</div>
-									<input type="text" id="j_captcha" placeholder="验证码">
+									<div class="item-title label">Category Priority</div>
 									<div class="item-input">
-										<img id="captcha_img" alt="点击更换" title="点击更换"
-											onclick="changeVerifyCode(this)" src="../Kaptcha" />
+										<input type="text" id="shop-category-priority" placeholder="Priority"></input>
+									</div>
+								</div>
+							</div>
+						</li>
+						
+						<!-- parent text -->
+						<li">
+							<div class="item-content">
+								<div class="item-inner">
+									<div class="item-title label">Category Parent</div>
+									<div class="item-input">
+										<input type="text" id="shop-category-parent" placeholder="Parent ID"></input>
 									</div>
 								</div>
 							</div>
@@ -139,11 +105,11 @@
 				<div class="content-block">
 					<div class="row">
 						<div class="col-50">
-							<a href="#" class="button button-big button-fill button-danger">返回</a>
+							<a href="#" class="button button-big button-fill button-danger">Back</a>
 						</div>
 						<div class="col-50">
 							<a href="#" class="button button-big button-fill button-success"
-								id="submit">提交</a>
+								id="submit">Submit</a>
 						</div>
 					</div>
 				</div>
@@ -161,6 +127,6 @@
 	<script type='text/javascript' src='../resources/js/common/common.js'
 		charset='utf-8'></script>
 	<script type='text/javascript'
-		src='../resources/js/shop/shopoperation.js' charset='utf-8'></script>
+		src='../resources/js/shop/shopcategoryoperation.js' charset='utf-8'></script>
 </body>
 </html>

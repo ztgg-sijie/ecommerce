@@ -20,7 +20,7 @@ public class ShopDaoTest extends BaseTest {
 	private ShopDao shopDao;
 
 	@Test
-	@Ignore
+//	@Ignore
 	public void testInsertShop() {
 		Shop shop = mockANewShop(1L, 4, 1L);
 		int effectedNum = shopDao.insertShop(shop);
@@ -59,8 +59,8 @@ public class ShopDaoTest extends BaseTest {
 		shopCondition.setShopCategory(childCategory);
 		List<Shop> shopList = shopDao.queryShopList(shopCondition, 4, 5);
 		int count = shopDao.queryShopCount(shopCondition);
-		System.out.println("shop count this page：" + shopList.size());
-		System.out.println("total shop count：" + count);		
+		System.out.println(">>>> shop count this page：" + shopList.size());
+		System.out.println(">>>> total shop count：" + count);		
 	}
 	
 	private Shop mockANewShop(Long userId, Integer areaId, Long shopCategoryId) {

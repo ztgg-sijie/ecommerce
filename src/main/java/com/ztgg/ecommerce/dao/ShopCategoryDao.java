@@ -8,6 +8,15 @@ import com.ztgg.ecommerce.entity.ShopCategory;
 
 
 public interface ShopCategoryDao {
+	
+	/**
+	 * insert a new shop category
+	 * 
+	 * @param shopCategory
+	 * @return
+	 */
+	int insertShopCategory(ShopCategory shopCategory);
+	
 	/**
 	 * return a list of shop categories
 	 * 
